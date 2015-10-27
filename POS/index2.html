@@ -1,0 +1,197 @@
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>pos</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		  <![endif]-->
+		</head>
+		<body onload="showProducts()">
+
+			<div class ="container">
+				<div class="row enclose" >
+					<div class="col-md-8 tabbable tba">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="active">
+								<a href="#meals" data-toggle="tab">Meals</a>
+							</li>
+							<li >
+								<a href="#drinks" data-toggle="tab">Drink</a>
+							</li>
+							
+							<li >
+								<a href="#transaction" data-toggle="tab" onclick='loadTransactions()'>Transactions</a>
+							</li>
+							<li >
+								<a href="#addproduct" data-toggle="tab">Add Product</a>
+							</li>
+							
+						</ul>
+							<div class="col-md-12">
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="meals">
+											<!-- <div class="container"> -->
+											<div id ="content"class="row">
+												<div id="try" class="col-md-12" id='mealsproducts' name='mealproducts'>
+													<div class="row" id='meal1' name='meal1'>
+
+													</div>
+												</div>			
+											</div>
+										</div> <!--End of fast category products display-->
+
+										<div class="tab-pane " id="drinks">
+											<div class="row">
+											</div>
+											<div id ="content"class="row">
+												<div id="try"class="col-md-12" id='drinkProducts' name='drinkProducts'>
+													<div class"row" id='drinks1' name='drinks1'> 
+
+													</div>				
+												</div>
+											</div>
+											<script src="js/jquery-2.1.3.js"></script>
+										</div> <!--End of drinks category products-->
+
+										<div class="tab-pane fade in " id="transaction" >
+											<div id ="content"class="row">
+												<div id="try"class="col-md-12" id='ptransactions' name='ptransactions'>
+													<div class"row" id='transactions' name='transactions'>	
+														<table class="table table-striped table-responsive" id='transactionstable'>
+														    <thead>
+														      <tr>
+														        <th>Transaction Id</th>
+														        <th>Products</th>
+														        <th>Total Price</th>
+														        <th>Time</th>
+														        <th>Customer No:</th>
+														      </tr>
+														    </thead>
+														    <tbody>
+														    </tbody>
+														  </table>
+
+													</div>
+												</div>
+											</div>
+										</div> <!--End of transactions   -->
+										<div class="tab-pane fade in " id="addproduct">
+											<div id ="content"class="row">
+												<div id="try"class="col-md-12" id='addproducts' name='addproducts'>
+													<div class"row" id='padd' name='padd'>	
+														<div id="addproduct">              
+               <!-- <form id="addform" name="addform" action="uploadFile.php" method="GET" enctype="multipart/form-data"> -->
+											               	<form id="addform" action="uploadFile.php" method="post" enctype="multipart/form-data">
+											                   <div class="form-group">
+											                      <label for="name">Product Name</label>
+											                      <input type="text" class="form-control" id="productname" placeholder="Product name">
+											                    </div>
+
+											                    <div class="form-group">
+											                      <label for="price">Product Price</label>
+											                      <input type="text" class="form-control" id="productprice" name="productprice" placeholder="Product price">
+											                    </div>
+											                    <div class="form-group">
+											                      <label for="productcategory">Category</label>
+											                      <select class="form-control" id="productcategory" name="productcategory">
+											                        
+											                        <option value="drinks">Drinks</option>
+											                        
+											                        <option value="meals">Meals</option>
+											                      </select>
+											                    </div> 
+											                   <label for="fileToUpload">Product Picture</label>
+																    <input type="file" name="fileToUpload" id="fileToUpload">
+																    <input class="btn btn-primary span12" type="submit" onclick="addProduct()" value="Upload Image" name="submit">
+											            	</form>
+
+											                 
+													 </div> 
+													</div>
+												</div>
+											</div>
+										</div> <!--End addproducts -->
+
+									</div>
+								</div> <!-- end food picture area -->
+							</div> <!-- End of tabbable class -->
+
+							<div class="row billingrow"> <!-- Transaction & results area -->
+								<div class="col-md-4" id="billingArea">
+									<div id="total_space"class="well">
+										<div class="table-responsive"> 
+											<table id="saleTable" name="saleTable" class="table table-hover">
+												<thead>
+													<tr>
+														<th>Food</th>
+														<th>Qty</th>
+														<th>Price</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table>
+										</div>
+										<div class="frm">
+											<div class="form-group">
+												<label for="name" class="col-lg-4">TOTAL:</label>
+												<div class="col-lg-8">
+													<input class="form-control" name="totalprice" id="totalprice" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="name" class="col-lg-4">PAID:</label>
+												<div class="col-lg-8">
+													<input class="form-control" name="paid" id="paid" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="name" class="col-lg-4">CHANGE:</label>
+												<div class="col-lg-8">
+													<input class="form-control" name="change" id="change" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="name" class="col-lg-4">Contact:</label>
+												<div class="col-lg-8">
+													<input class="form-control" name="phone" id="phone" type="text" placeholder='+233'>
+												</div>
+											</div>
+										</div>
+										<a class="btn btn-lg btn-info" onclick="transact()">Submit</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Ofline JQuery-->
+					<script src="js/jquery-2.1.3.js"></script>
+					<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+					<!-- Include all compiled plugins (below), or include individual files as needed -->
+					<script src="js/bootstrap.min.js"></script>
+					<script type="text/javascript" src="js/myjs.js"></script>
+					<SCRIPT LANGUAGE="JavaScript">
+					$(document).ready(function() {
+
+
+					});
+					</SCRIPT>
+
+				</body>
+				<!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum -->
+				</html>

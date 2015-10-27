@@ -2,17 +2,17 @@
 if(isset($_REQUEST['cmd'])){
 	$cmd=$_REQUEST['cmd'];
 
-	function getAllFoods(){
+	function getAllProducts(){
 		include_once("products.php");
 
 		$product=new products();
 
-		if(!$product->getFoods()){
-			echo '{"result":0,"message":"Could not get foods"}';
+		if(!$product->getProducts()){
+			echo '{"result":0,"message":"Could not get products"}';
 			return;
 		}
 		$row=$product->fetchArray();
-		echo '{"result":1,"foods":[';
+		echo '{"result":1,"products":[';
 		while($row){
 			echo json_encode($row);
 			if($row=$product->fetchArray()){
@@ -29,11 +29,11 @@ if(isset($_REQUEST['cmd'])){
 		$categ=$_REQUEST['categ'];
 
 		if(!$product->getFoodByCategory($categ)){
-			echo '{"result":0,"message":"Could not get foods"}';
+			echo '{"result":0,"message":"Could not get products"}';
 			return;
 		}
 		$row=$product->fetchArray();
-		echo '{"result":1,"foods":[';
+		echo '{"result":1,"products":[';
 		while($row){
 			echo json_encode($row);
 			if($row=$product->fetchArray()){
@@ -44,39 +44,39 @@ if(isset($_REQUEST['cmd'])){
 		echo ']}';
 	}
 
-	function getFoodById(){
+	function getProductById(){
 		include_once("products.php");
 		$product=new products();
 		$fid=$_REQUEST['fid'];
 	
-		echo json_encode($product->getFoodById($fid));
+		echo json_encode($product->getProductById($fid));
 		
 			}
 
-	function deleteFood(){
+	function deleteProduct(){
 		include_once("products.php");
 		$product=new products();
 		$fid=$_REQUEST['fid'];
 
-		if($product->deleteFood($fid)){
-			echo '{"result":0,"message":"Food not deleted"}';
+		if($product->deleteProduct($fid)){
+			echo '{"result":0,"message":"Product not deleted"}';
 			return;
 		}
-		echo '{"result":1,"message":"Food Deleted"}';
+		echo '{"result":1,"message":"Product Deleted"}';
 
 	}
 
-	function searchFood(){
+	function searchProduct(){
 		include_once("products.php");
 		$product=new products();
 		$txt=$_REQUEST['txt'];
 
-		if(!$product->searchFood($txt)){
-			echo '{"result":0,"message":"Could not get foods"}';
+		if(!$product->searchProduct($txt)){
+			echo '{"result":0,"message":"Could not get products"}';
 			return;
 		}
 		$row=$product->fetchArray();
-		echo '{"result":1,"foods":[';
+		echo '{"result":1,"products":[';
 		while($row){
 			echo json_encode($row);
 			if($row=$product->fetchArray()){
@@ -88,7 +88,7 @@ if(isset($_REQUEST['cmd'])){
 
 	}
 
-	function addFood(){
+	function addProduct(){
 		include_once("products.php");
 		$product=new products();
 		$fname=$_REQUEST['fname'];
@@ -96,15 +96,16 @@ if(isset($_REQUEST['cmd'])){
 		$fprice=$_REQUEST['fprice'];
 		$pic=$_REQUEST['pic'];
 
-		if(!$product->addFood($fname,$fcateg,$fprice,$pic)){
-			echo '{"result":0,"message":"Could not add the food"}';
+		if(!$product->addProduct($fname,$fcateg,$fprice,$pic)){
+			echo '{"result":0,"message":"Could not add the product"}';
+
 			return;
 		}
 
-		echo '{"result":1,"message":"Succesfully added food"}';
+		echo '{"result":1,"message":"Succesfully added product"}';
 	}
 
-	function updateFood(){
+	function updateProduct(){
 		include_once("products.php");
 		$product=new products();
 		$fid=$_REQUEST['fid'];
@@ -113,35 +114,35 @@ if(isset($_REQUEST['cmd'])){
 		$fprice=$_REQUEST['fprice'];
 		$pic=$_REQUEST['pic'];
 
-		if(!$product->updateFood($fid,$fname,$fcateg,$fprice,$pic)){
-			echo '{"result":0,"message":"Could not add the food"}';
+		if(!$product->updateProduct($fid,$fname,$fcateg,$fprice,$pic)){
+			echo '{"result":0,"message":"Could not add the product"}';
 			return;
 		}
 
-		echo '{"result":1,"message":"Succesfully added food"}';
+		echo '{"result":1,"message":"Succesfully added product"}';
 	}
 
 	switch ($cmd) {
 		case 1:
-			addFood();
+			addProduct();
 			break;
 		case 2:
-			updateFood();
+			updateProduct();
 			break;
 		case 3:
-			getAllFoods();
+			getAllProducts();
 			break;
 		case 4:
 			getByCategory();
 			break;
 		case 5:
-			getFoodById();
+			getProductById();
 			break;
 		case 6:
-			deleteFood();
+			deleteProduct();
 			break;
 		case 7:
-			searchFood();
+			searchProduct();
 			break;
 		default:
 			echo '{"cmd":"none","message":"No command issued"}';

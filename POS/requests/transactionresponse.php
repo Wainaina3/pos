@@ -13,8 +13,9 @@ if (isset($_REQUEST['cmd'])){
 		$foodprice=$_REQUEST['fprice'];
 		$total=$_REQUEST['total'];
 		$empid=$_REQUEST['empid'];
+		$phone=$_REQUEST['phone'];
 
-		$add=$transact->addTransaction($tranid,$foodnames,$foodqty,$foodprice,$total,$empid);
+		$add=$transact->addTransaction($tranid,$foodnames,$foodqty,$foodprice,$total,$empid,$phone);
 
 		if(!$add){
 			echo '{"result":0,"message":"Could not do a transaction"}';
@@ -65,7 +66,7 @@ if (isset($_REQUEST['cmd'])){
 		$transact->getByTime($dateFrom,$dateTo);
 
 		if($row=$transact->fetchArray()){
-			echo '{"result":1,transactions:[';
+			echo '{"result":1,"transactions":[';
 			while($row){
 				echo json_encode($row);
 				if($row=$transact->fetchArray()){
@@ -85,7 +86,7 @@ if (isset($_REQUEST['cmd'])){
 
 		$transact->getByEmp($empid);
 		if($row=$transact->fetchArray()){
-			echo '{"result":1,transactions:[';
+			echo '{"result":1,"transactions":[';
 			while($row){
 				echo json_encode($row);
 				if($row=$transact->fetchArray()){
@@ -106,7 +107,7 @@ if (isset($_REQUEST['cmd'])){
 
 		$transact->getTransactions();
 		if($row=$transact->fetchArray()){
-			echo '{"result":1,transactions:[';
+			echo '{"result":1,"transactions":[';
 			while($row){
 				echo json_encode($row);
 				if($row=$transact->fetchArray()){
@@ -116,7 +117,34 @@ if (isset($_REQUEST['cmd'])){
 
 			echo ']}';
 		}
-		echo '{"result":0,"message":"No transactions found"}';
+		else
+		{
+			echo '{"result":0,"message":"No transactions found"}';
+		}
+
+	}
+
+	function checkDiscount(){
+		include_once("transactions.php");
+		$transact=new transactions();
+		$phone=$_REQUEST['phone'];
+		$transact->checkForDiscount($phone);
+
+		if($row=$transact->fetchArray()){
+			echo '{"result":1,"transactions":[';
+			while($row){
+				echo json_encode($row);
+				if($row=$transact->fetchArray()){
+					echo ',';
+				}
+			}
+
+			echo ']}';
+		}
+		else
+		{
+			echo '{"result":0,"message":"No transactions found"}';
+		}
 	}
 
 	switch ($cmd) {
@@ -138,6 +166,8 @@ if (isset($_REQUEST['cmd'])){
 		case 6:
 			transactions();
 			break;
+		case 7:
+			checkDiscount();
 		default:
 			
 			break;

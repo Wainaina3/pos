@@ -8,6 +8,8 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/myjs.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
 
     <title> Ashesi POS</title>
 
@@ -15,7 +17,7 @@
 
 
 <body>
-	<div data-role="page" id="home" name="home" onload="loadProducts()"> 
+	<div data-role="page" id="home" name="home"> 
 	<div data-role="header" class="header">
 			<h1></h1>
 	</div>
@@ -34,50 +36,41 @@
 
 		</div>
 
-		<div class="row">
-			<div class="col-md-3">
-				<div data-role="fieldcontain">
-					<label for="select-choice-1" class="select">Select Food Category:</label>
-					<select name="select-choice-1" id="select-choice-1">
+			<div data-role="fieldcontain">
+				<label for="select-choice-1" class="select">Select Food Category:</label>
+				<select name="select-choice-1" id="select-choice-1">
 						<option value="standard">Breakfast</option>
 						<option value="rush">Snacks</option>
 						<option value="express">Drinks</option>
 						<option value="overnight">Meals</option>
-					</select>
-				</div>
+				</select>
+			</div>
+	<div class="container">
+		<div class="row">
+			
+				<div class="col-md-3">
 			   <div id="productscol1">
-			   		<div id='productShelve' name='productShelve' onClick='sellProduct(this)'>
-			   			<div id='imageDiv' name='imageDiv' > 
-
-			   			</div>
-			   		</div>
+			   	get some here
 			   </div>
 			 </div>
 		  	<div class="col-md-3"> 
 			   <div id="productscol2">
-			   		<div id='productShelve' name='productShelve' onClick='sellProduct(this)'>
-			   			<div id='imageDiv' name='imageDiv' > 
-
-			   			</div>
-			   		</div>
+			   	and others here
 			   </div>  
 		  	</div>
 			<div class="col-md-3"> 
 			   <div id="productscol3">
-			   		<div id='productShelve' name='productShelve' onClick='sellProduct(this)'>
-			   			<div id='imageDiv' name='imageDiv' > 
-
-			   			</div>
-			   		</div>
+			and here too
 			   </div>
 			</div>
 		  	<div class="col-md-3"> 
 			   <div id="transactioncol">
-
+			   	get transactions here
 			   </div>
 
 		 	 </div>
 		</div>
+	</div>
 	</div> <!--End of home page -->
 	<div idata-role="page" id="transactions" name="transactions"> 
 		<div data-role="header" class="header">
@@ -126,7 +119,7 @@
 				<ul >
 					<li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home" onclick="loadProducts()">Home</a></li>
 					<li><a href="#transactions" onclick="loadTransactions()" class="ui-btn-active ui-state-persist" >Transactions</a></li>
-					<li><a href="#addProducts" class="ui-btn-active ui-state-persist" > Add Stock</a></li>
+					<li><a href="addProducts.html" class="ui-btn-active ui-state-persist" > Add Stock</a></li>
 
 
 		

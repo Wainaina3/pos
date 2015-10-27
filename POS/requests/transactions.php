@@ -3,16 +3,16 @@ include_once("base.php");
 
 class transactions extends base{
 //function to add a transaction in the database
-	function addTransaction($tran_id,$food_names,$food_quantities,$food_prices,$total,$emp_id){
+	function addTransaction($tran_id,$food_names,$food_quantities,$food_prices,$total,$user_id,$phone){
 		$sql="insert into transactions set transaction_id='$tran_id',food_names='$food_names',food_quantities='$food_quantities',food_prices='$food_prices',
-		total_price='$total',employee_id='$emp_id'";
+		total_price='$total',user_id='$user_id',customer_phone='$phone'";
 
 		return $this->query($sql);
 	}
 //update a transaction Deprecated!!
-	function updateTransaction($tran_id,$food_names,$food_quantities,$food_prices,$total,$emp_id){
+	function updateTransaction($tran_id,$food_names,$food_quantities,$food_prices,$total,$emp_id,$phone){
 		$sql="update transactions set food_names='$food_names',food_quantities='$food_quantities',food_prices='$food_prices',
-		total_price='$total',employee_id='$emp_id' where transaction_id='$tran_id'";
+		total_price='$total',user_id='$emp_id',customer_phone='$phone' where transaction_id='$tran_id',";
 
 		return $this->query($sql);
 
@@ -47,6 +47,11 @@ class transactions extends base{
 	function getTransactions(){
 		$sql="select * from transactions";
 
+		return $this->query($sql);
+	}
+
+	function checkForDiscount($phone){
+		$sql="select * from transactions where customer_phone='$phone' order by transaction_time DESC limit 1";
 		return $this->query($sql);
 	}
 }

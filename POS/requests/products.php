@@ -24,7 +24,8 @@ function getProductById($id){
 }
 //add a product in the database
 function addProduct($name,$cate,$price,$pic){
-	$sql="insert into products set product_name='$name',product_price='$price',image_link='$pic',category='$cate'";
+	$sql="insert into products set product_name='$name',price='$price',image_link='$pic',category='$cate'";
+	//$sql="insert into products set product_name='mimi',price=12,image_link='acn2.jpg',category='fast'";
 
 	return $this->query($sql);
 }
@@ -35,7 +36,7 @@ function updateProduct($id,$name,$cate,$price,$pic){
 	return $this->query($sql);
 }
 //delete product from the database
-function deleteProducr($id){
+function deleteProduct($id){
 	$sql="delete from products where product_id='$id'";
 
 	return $this->query($sql);
