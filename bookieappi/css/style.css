@@ -1,0 +1,172 @@
+.clickspot{
+    display: inline-table;
+	color:blue;
+	cursor:pointer
+}
+.status{
+	background-color:Yellow
+}
+.error{
+	color:Red;
+	background-color:Yellow
+}
+
+.menuitem {
+	/*text-decoration:underline;*/
+	color:blue;
+	cursor:hand
+}
+.menuitem:hover{
+	text-decoration:underline;
+	cursor:hand;
+	font-weight:bold;
+	background-color:#CC3300;
+
+}
+
+#pageheader
+{
+    height: 1in;
+    background-color: #8D1919;
+    font-size: large;
+    text-align: center;
+}
+
+#mainnav{
+	width:2in;
+	vertical-align:top
+}
+
+
+#content {
+	width:10in;
+	/*vertical-align:top*/
+	
+}
+#divContent{
+    width:10in;
+    /*vertical-align:top*/
+    
+}
+
+
+.reportTable 
+{
+    border:2px;
+  /*  border-collapse:collapse;*/
+}
+
+.reportTable .header
+{
+    background-color: #CC6600;
+    /*text-transform: uppercase;*/
+    color: White;
+}
+.reportTable .header td:hover
+{
+    background-color:#335CD6;
+}
+
+.reportTable .row1
+{
+    background-color: #FFE0B3;
+}
+
+
+
+/*.reportTable tr:hover
+{
+    background-color:Yellow
+}*/
+
+.tableForm .label
+{
+    background-color: #CC6600;
+    text-transform:capitalize;
+    color: White;
+    text-align:right;
+}
+
+.tableForm .field
+{
+    background-color: #FFAE35;
+}
+.popupMenu
+{
+    background-color: #DC7518;
+    position: absolute;
+    display:none;
+    width: auto;
+}
+
+.popupMenu div
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.popupMenu div:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+    background-color: #CC6600;
+}
+
+.popupForm
+{
+    background-color: #DC7518;
+    position: absolute;
+    display:none;
+    width: auto;
+}
+
+/*Style for the main menu
+*/
+#divPageMenu{
+    width: 960px;
+    height: 60px;
+    font-size: 18px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 2px #333333;
+    background-color: #8AD9FF;
+    border-radius: 8px;
+    /*padding: 5px;*/
+    border: 5px solid #FFF;
+    margin: 0;
+}
+#divPageMenu ul{
+    height: auto;
+    padding: 12px 0px;
+    margin: 0;
+}
+#divPageMenu li{
+    display: inline;
+    padding: 20px;
+}
+#divPageMenu a{
+    text-decoration: none;
+    color: #FFF;
+    padding: 8px 45px 8px 45px;
+}
+#divPageMenu a:hover{
+    color: #FFF;
+    background-color: #8D1919;
+    border-radius: 8px;
+}
+#divPageMenu a.active {
+  background-color: #DDD;
+  color: #444;
+  cursor: default;
+}
+/*End of menu
+*/
+
+
+
+
+.reportTable td:hover
+{
+    background-color:#99FF33;
+}

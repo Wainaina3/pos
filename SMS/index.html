@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/myjs.js"> </script>
+    <link rel="stylesheet" href="themes/themed.css">
+    <link  rel="stylesheet" href="themes/themed.min.css">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="mobihome" data-theme="d">
+    <div data-role="header">
+        <h1>Ashesi University College Registration Portal </h1>
+    </div>
+    <div role="main" class="ui-content" data-theme="d">
+        <div data-role="header">
+            <div data-role="navbar">
+                <ul>
+                    <li><a accesskey="1" href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+                    <li><a accesskey="2" href="#view" class="ui-btn-active ui-state-persist"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="requests/send.php?" method="post" data-theme="d">
+            <label for="fname"> First Name:</label>
+            <input type="text" id="fname">
+            <label for="lname"> Last Name:</label>
+            <input type="text" id="lname">
+            <label for="class"> Select Year Group: </label>
+            <select id="class">
+                <option value="2016"> 2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+            </select>
+
+            <label for="major"> Select Major</label>
+            <select id="major">
+               <option value="cs"> Computer Science</option>
+               <option value="mis"> Management Information Systems</option>
+               <option value="ba"> Business Administrations</option>
+            </select>
+            <label for="sid"> Student ID: </label>
+            <input type="text" id="sid">
+            <label for="gpa"> GPA: </label>
+            <input type="text" id="gpa">
+			<label for="phone"> Phone Number:</label>
+			<input type="text" id="phone">
+            <input type="button" id="submit" onclick="register()" value="Register" >
+        </form>
+
+    </div>
+
+
+    <div data-role="footer">
+
+
+    </div>
+</div> <!--End of mobile home page -->
+
+
+</body>
+</html>

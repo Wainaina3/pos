@@ -1,0 +1,109 @@
+
+#abc{
+	width: 100%;
+	height: 100%;
+	opacity: .65;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #313131;
+	*background:none;
+	overflow: auto;
+	 z-index: 9001;
+}
+
+img#close{
+	position: absolute;
+	right: 0px;
+	top: -10px;
+	cursor: pointer;
+}
+
+div#popupContact{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 17%;
+	margin-left: -202px;
+	font-family: 'Raleway', sans-serif;	
+	z-index: 9002;
+}
+div#popupEdit{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 17%;
+	margin-left: -202px;
+	font-family: 'Raleway', sans-serif;	
+	z-index: 9002;
+}
+
+form#form{
+	max-width: 400px;
+	min-width: 300px;
+	padding: 10px 50px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	font-family: raleway;	
+	background:url(../images/25.jpg) no-repeat 100% 100%;
+
+}
+
+p{
+	margin-top: 30px;
+}
+
+h2#addf{
+	background-color: #FEFFED;
+	padding: 20px 35px;
+	padding-bottom: 20px;
+	margin: -20px -50px;
+	text-align: center;
+	border-radius: 10px 10px 0 0
+}
+
+hr{
+	margin: 10px -50px;
+	border: 0;
+	border-top: 1px solid #ccc
+}
+
+#form input[type=text]{
+	width: 82%;
+	padding-left:5px;
+	font-size: 16px;
+	font-family: raleway;
+	color: white;
+}
+
+#did{
+	margin-top: 20px;
+}
+
+
+#submit{
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
+	background-color: #FFBC00;
+	color: #fff;
+	border: 1px solid #FFCB00;
+	padding: 10px 10px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+button{
+	width:10%;
+	height: 45px;
+	border-radius: 3px;
+	background-color: #cd853f;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+}

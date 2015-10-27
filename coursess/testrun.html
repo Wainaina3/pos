@@ -1,0 +1,119 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/elements.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	
+	
+	<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+
+		var txt = "";
+
+
+		function get_selectd(){
+			var coffee = document.forms[0];
+			var i;
+			for (i = 0; i < coffee.length; i++) {
+				if (coffee[i].checked) {
+					txt = txt + coffee[i].value + " ";
+				}
+			}
+
+		}
+		function prit(){
+			get_selectd();
+
+			document.getElementById("spce").innerHTML = "User has the ff rights: " + txt;
+			txt = "";
+
+		}
+
+
+
+	</script>
+	<style type="text/css">
+		input[type="text"]{
+			/*margin: 5px;
+			height: 40px;
+			width: px;*/
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 	<div align="center"><img src="images/25.png" width="80px" height="70px" style="padding-top: 70px;"></div> -->
+	<div class="container">
+		<form class="form-horizontal" role="form">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
+				</div>
+				<div class="col-xs-2"></div>
+			</div>
+			<div class="col-sm-4"></div>
+
+			<!-- <div class="col-lg-12">sdfg</div> -->
+<!-- 
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
+				</div>
+				<div class="col-xs-2"></div>
+			</div>
+			<div class="col-sm-4"></div> -->
+		</form>
+	</div>
+
+
+	<!-- <div align="center" style="padding-top: 20px;" >
+		
+		<form class="form-horizontal" role="form">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="col-sm-4"></div>
+
+
+		</form>
+		<form class="form-horizontal" role="form">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-8">
+				<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="col-sm-4"></div>
+		</form>
+	-->
+
+	<!-- <input type="text" placeholder="Confirm Password"><br> -->
+	<!-- Permissions:
+	<div>
+		<input type="checkbox" id="Dee"  value="Add">Add<br>
+		<input type="checkbox" id="Dee"  value="Edit">Edit<br>
+		<input type="checkbox" id="Dee"  value="Delete">Delete<br>
+		<input type="checkbox" id="Dee" value="Update">Update<br>
+	</div> -->
+	<!-- <input type="button" onclick="prit()" value="Add"> -->
+	<!-- <div id="spce"></div>
+
+</div> -->
+</body>
+</html>

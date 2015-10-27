@@ -1,0 +1,215 @@
+#log{
+    background-image: url("../images/1212.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+body{
+    background-image: url(../images/1212.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+
+#maintable{
+    margin: auto;
+}
+
+.clickspot{
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer
+}
+.status{
+    color: red;
+}
+.error{
+	color:Red;
+	background-color:Yellow
+}
+.headers{
+   /*color: #CF0000;*/
+    font-weight: bold;
+}
+
+.menuitem {
+	text-decoration:underline;
+	color:blue;
+	cursor:hand
+}
+.menuitem:hover{
+	text-decoration:underline;
+	cursor:hand;
+	font-weight:bold;
+	background-color:Silver
+}
+
+#pageheader
+{
+    color: white;
+    height: 1in;
+    padding-top: 35px;
+    background-color:  #800000;
+    font-size: 30;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    background-image: url(../images/25.png);
+    background-repeat: no-repeat;
+    background-size: 20% 100%;
+}
+
+
+#mainnav{
+	/*width:2in;*/
+	/*vertical-align:middle;*/
+    /*outline: thin solid black;*/
+    /*height: 500px;*/
+
+    background-color: green;
+
+}
+div#view{
+    background-image: url(../images/png/approve9.png);
+    background-repeat: no-repeat;
+    /*background-position: */
+}
+
+/*
+#content {
+	width:10in;
+	vertical-align:top
+	
+}*/
+
+.reportTable 
+{
+    border:1px;
+    border-collapse:collapse;
+}
+
+.reportTable .header
+{
+    background-color: #CC6600;
+    text-transform: uppercase;
+    color: White;
+}
+
+.reportTable .row1
+{
+    background-color: #FFE0B3;
+}
+
+.reportTable .row2
+{
+    background-color:White;
+}
+
+.reportTable tr:hover
+{
+    
+}
+
+.tableForm .label
+{
+    background-color: #CC6600;
+    text-transform:capitalize;
+    color: White;
+    text-align:right;
+}
+
+.tableForm .field
+{
+    background-color: #FFAE35;
+}
+.popupMenu
+{
+    background-color: #DC7518;
+    position: absolute;
+    display:none;
+    width: auto;
+}
+
+.popupMenu div
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.popupMenu div:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+    background-color: #CC6600;
+}
+
+.popupForm
+{
+    background-color: #DC7518;
+    position: absolute;
+    display:none;
+    width: auto;
+}
+
+/*login*/
+#logo{
+     color: white;
+    height: 1in;
+    padding-top: 35px;
+    background-color:  #800000;
+    font-size: 30;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    background-image: url(../images/25.png);
+    background-repeat: no-repeat;
+    background-size: 20% 100%;
+
+}
+#navlo{
+     
+     background-color:  #800000;
+}
+#navs{
+     
+     background-color:  #800000;
+     font-weight: 16px;
+     height: 30px;
+     margin-top: 10px;
+}
+#df{
+    height: 30px;
+}
+.headers{
+    text-decoration: bold;
+}
+#theaders{
+    text-decoration: bold;
+}
+.theaders{
+      text-decoration: bold;
+      
+
+}
+.active:hover{
+    cursor:pointer;
+    background-color: #800000;
+    
+}
+#course_outlines{
+    height: 20%;
+}
+
+.inner{
+    padding-top: 0;
+}
+
+#footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            /*margin-right: 0.7in;*/
+            padding:5px;         
+        }

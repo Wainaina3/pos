@@ -1,0 +1,57 @@
+<html>
+<head>
+	 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+		<link rel="stylesheet" href="css/style_book.css">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style_index.css">
+		<link rel="stylesheet" href="css/style_popup.css" >
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+<body>
+
+	<div id="boxes">
+	    
+	    <!-- #customize your modal window here -->
+	    <div id="dialog" class="window">
+	        <form action="" method="POST">
+				<div>Room:<input type= "text" name="n" size="30"></div>
+				<div>Date:<input type= "text" id="datepicker" size="30"></div>
+				<div>Time:<input type= "text" name="n" size="30"></div>
+				<div>Name:<input type= "text" name="n" size="30"></div>
+				<div>Phone:<input type= "text" name="n" size="30"></div>
+				<div>Email:<input type= "text" name="n" size="30"></div>
+				<div>Title:<input type= "text" name="n" size="30"></div>
+				<div id="mybtn">
+					<table >
+						<tr>
+							<td>
+								<div id= "btn1"><input type= "submit" value="Cancel"name="btn_cancel"
+									style="font-size:15pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+								</div>
+								</td>
+								<td>
+								<div id ="btn2"><input type= "submit" value="Book"name="btn_submit" 
+									style="font-size:15pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+	        
+	        <!-- close button is defined as close class -->
+	         <a style="color: #CC0000" background: "#b9b9b9" href="#" class="close"><h3>Close</h3></a>
+	    </div>
+	    <!-- Do not remove div#mask, because you'll need it to 		fill the whole screen -->    
+	     <div id="mask"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+session_start();
+$_SESSION["USER_ID"]=$row["USER_ID"];
+$_SESSION["USER_NAME"]=$Rrow["username"];
+$_SESSION["USER_TYPE"]=$row["user_type"];
+
+if($_SESSION["USER_TYPE"]!='admin'){
+	
+}
+else
+header("location: login.php");
+
+
+
+search page
+
+
+if(!isset($_SESSION["USER_ID"])){
+	header("location:login.php");
+
+}
+else{
+	
+print_r($_SESSION["USER_NAME"]);
+print_r($_SESSION["USER_ID"]);
+}

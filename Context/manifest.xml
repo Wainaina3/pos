@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="MailApp">
+    <!-- Id is a unique UUID for the mail add-in -->
+    <Id>51a7947b-45ba-4c8d-a361-2e8263ffffb5</Id>
+    <Version>1.0</Version>
+    <ProviderName>Contoso</ProviderName>
+    <DefaultLocale>en-us</DefaultLocale>
+    <DisplayName DefaultValue="First" />
+    <Description DefaultValue="A simple first mail add-in." />
+
+    <Requirements>
+        <Sets DefaultMinVersion="1.1">
+            <Set Name="Mailbox" />
+        </Sets>
+    </Requirements>
+
+    <FormSettings>
+        <Form xsi:type="ItemRead">
+            <DesktopSettings>
+                <!-- Specify your web server and path in place of 'webserver'. -->
+                <SourceLocation DefaultValue="http://cs.ashesi.edu.gh/~csashesi/class2016/david-wainaina/Context/default.htm" />
+                <RequestedHeight>250</RequestedHeight>
+            </DesktopSettings>
+        </Form>
+    </FormSettings>
+    <Permissions>ReadItem</Permissions>
+
+    <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
+</OfficeApp>

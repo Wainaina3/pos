@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Index</title>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="css/nivo-slider.css" media="screen">
+    <!-- jQuery & Nivo Slider -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="js/book.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style_index.css">
+		<link rel="stylesheet" href="css/style_book.css">
+		<link rel="stylesheet" href="css/style_popup.css" >
+		
+	</head>
+
+	<body>
+	<div id="boxes">
+	    
+	    <!-- #customize your modal window here -->
+	    <div id="dialog" class="window">
+	        <form action="" method="POST">
+				<div>Room:<input type= "text" name="n" size="30"></div>
+				<div>Date:<input type= "text" name="n" size="30"></div>
+				<div>Time:<input type= "text" name="n" size="30"></div>
+				<div>Name:<input type= "text" name="n" size="30"></div>
+				<div>Phone:<input type= "text" name="n" size="30"></div>
+				<div>Email:<input type= "text" name="n" size="30"></div>
+				<div>Title:<input type= "text" name="n" size="30"></div>
+				<div id="mybtn">
+					<table >
+						<tr>
+							<td>
+								<div id= "btn1"><input type= "submit" value="Cancel"name="btn_cancel"
+									style="font-size:15pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+								</div>
+								</td>
+								<td>
+								<div id ="btn2"><input type= "submit" value="Book"name="btn_submit" 
+									style="font-size:15pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+	        
+	        <!-- close button is defined as close class -->
+	         <a style="color: #CC0000" background: "#b9b9b9" href="#" class="close"><h3>Close</h3></a>
+	    </div>
+							    <!-- Do not remove div#mask, because you'll need it to fill the whole screen -->    
+							     <div id="mask"></div>
+							</div>
+		<div id ="container2">
+		<table>
+			<tr>
+				<td colspan="2" id="pageheader">
+			<div id="header">
+					<div id="icon">
+						<a href="index.html"><img src="images/icon1.png" width="50" height="50"></a>
+					</div>
+					<div id="name">
+						<h3>BOOKIE</h3>
+					</div>
+					<div id="login">
+						<button id= "lbtn">LOGOUT</button>
+					</div>
+			</div>
+				</td>
+			</tr>
+			<tr>/
+				<td id="mainnav">
+					<div class="menuitem">menu 1</div>
+					<div class="menuitem">menu 2</div>
+					<div class="menuitem">menu 3</div>
+					<div class="menuitem">menu 4</div>
+				</td>
+				<td id="content">
+					<div id="divPageMenu">
+
+						<span class="menuitem" ><a href="#dialog" name="modal">BOOK</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<span class="menuitem" >VIEW</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="menuitem" >MY BOOKINGS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" id="txtSearch" placeholder="search"/>
+						<span class="menuitem"><button>search</button></span>
+
+					</div>
+					
+					<div id="divContent">
+						<span class="clickspot"></br></span>
+						<table  boarder= 2 align ="center" id="tableExample" class="reportTable" width="100%">
+							<tr class="header">
+								<td width= "100" >TIME</td>
+								<td width= "100">LH 115</td>
+								<td width= "100">LH 116</td>
+								<td width= "100">LH 216</td>
+								<td width= "100">LH 217</td>
+								<td width= "100">LH 218</td>
+								<td width= "100">LIB 302</td>
+								<td width= "100">Amphitheater</td>
+								<td width= "100">Courtyard</td>
+							</tr>
+							
+
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>	

@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+	<header>
+		<meta charset="UTF-8">
+		<title>Bookie</title>
+		<meta charset="utf-8">
+                <script src="http://code.jquery.com/jquery-latest.min.js"></script><script>
+$(document).ready(function() {
+	$("#loginLink").click(function( event ){
+		event.preventDefault();
+    	$(".overlay").fadeToggle("fast");
+  	});
+	
+	$(".reg-wrapperLink").click(function(event){
+		event.preventDefault();
+		var action = $(this).attr('data-action');
+		
+		$.get( "ajax/" + action, function( data ) {
+			$( ".reg-content" ).html( data );
+		});	
+		
+		$(".overlay-reg").fadeToggle("fast");
+
+		
+	});
+	
+	$(".close").click(function(){
+		$(".overlay").fadeToggle("fast");
+	});
+	
+	$(".close-reg").click(function(){
+		$(".overlay-reg").fadeToggle("fast");
+	});
+
+	$(document).keyup(function(e) {
+		if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) { 
+			event.preventDefault();
+			$(".overlay").fadeToggle("fast");
+		}
+	});
+});
+</script>
+    <link rel="stylesheet" href="css/nivo-slider.css" media="screen">
+    <!-- jQuery & Nivo Slider -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/jquery.nivo.slider.pack.js"></script>
+
+	<script src="js/login.js"></script>
+
+		<link rel="stylesheet" href="css/style_index.css" >
+		<link rel="stylesheet" href="css/login.css" >
+
+		<link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+		<script language="JavaScript" type="text/javascript">
+			function login(showhide){
+			if(showhide == "show"){
+			    document.getElementById('popupbox').style.visibility="visible";
+			}else if(showhide == "hide"){
+			    document.getElementById('popupbox').style.visibility="hidden"; 
+			}
+			}
+		</script>
+		<style type="text/css">
+
+			#dialog1 .d-header {
+			  /*background:url(images/login-header.png) no-repeat 0 0 transparent; */
+			  width:375px; 
+			  height:150px;
+			}
+			#dialog1 .d-blank {
+			  float:left;
+			  /*background:url(images/login-blank.png) no-repeat 0 0 transparent; */
+			  width:267px; 
+			  height:53px;
+
+			}
+		</style>
+	</header>
+	<body>
+		<div id="container">
+			<div id="header2">
+					<div id="icon">
+						<a href="index.html"><img src="images/icon1.png" width="50" height="50"></a>
+					</div>
+					<div id="Topname">
+						<h3>BOOKIE</h3>
+					</div>
+					<div id="login">
+						<div id="buttons">
+							<table boarder="2">
+								<tr>
+									<td>
+										<a href="login.php" id="loginLink" ><button id="loginBtn1">Login</button></a>
+									</td>
+									<td>
+										<a href="register.php" class="reg-wrapperLink" name="modal"><button id="registerBtn2">Register</button ></a>
+									</td>
+								</tr>
+							</table>
+						</div>
+						</div>
+<div class="overlay-reg" style="display: none;">
+	<div class="reg-wrapper">
+		<div class="reg-content">
+			<a class="close-reg">x</a>
+			<h3>Register</h3>
+			<form method="post" id="reg"action="register.php">
+				<label for="name">
+					User Name:
+					<input type="text" name="fullname" id="fullname" pattern="[a-z]{1,50}.[a-z]{1,50}" placeholder="User Name must be entered"required="required" />
+				</label>
+				<label for="email">
+					E-mail:
+					<input type="text" name="mail" id="mail" placeholder="Ashesi Email Adress" pattern="[a-z]{1,50}.[a-z]{1,50}[@][a-z]{6,6}.[a-z]{3,3}.[a-z]{2,2}" required="required" />
+				</label>
+				<label for="password">
+					Password:
+					<input type="password" 	name="password" id="password" placeholder="Password must contain 1 uppercase, lowercase and number" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+				</label>
+				<button type="submit">Register</button>
+			</form>
+		</div>
+	</div>
+</div>
+							<!-- End of Login Dialog -->
+
+							<!-- Mask to cover the whole screen -->
+<!--							 <div id="mask"></div>
+
+						</div>-->
+<!--						<div id="boxes">
+						<div id="dialog" class="window">
+							</div>  
+								<div id="registerDialog" class="window">
+							  		<div class="d-header">
+							   			<input type="email"  onclick="this.value=''" placeholder="Email" required="required" /><br/>
+							   			<input type="text"  onclick="this.value=''" placeholder="Username" pattern="" required="required"/><br/>
+							   			<input type="password"  onclick="this.value=''" placeholder="Password" pattern="" required="required"/><br/>
+							    		<input type="password" onclick="this.value=''" placeholder="Confirm password" pattern="" required="required"/>  
+							    		<input type="button" value="Cancel" class="close"/>
+							    		<input type="button" value="Register" class="register"/>  
+							 		 </div>-->
+							  		<!-- <div class="d-blank"></div>
+							  		<div class="d-login">
+							  		<input type="image" alt="Login" title="Login" src="images/login-button.png"/>
+							  	</div> -->
+							  	
+							<!--</div>-->
+							<!-- End of Login Dialog -->
+
+							<!-- Mask to cover the whole screen -->
+<!--							 <div id="mask"></div>
+							 </div> 
+						-->
+			<div id="top_updates">
+				<div id="sliding_wrds">
+					<marquee  behavior="scroll" direction="left">LH 216 5-6 cv clinic &nbsp;&nbsp;&nbsp; LH 218 Peer Educators 3-5 &nbsp;&nbsp;&nbsp; LH 116 Google club 5-5:30</marquee>
+				</div>
+			</div>
+			<div id= "slides">
+				<div class="slider-wrapper futurico-theme">
+ 
+				    <div id="slider" class="nivoSlider">
+				 
+				        <img src="images/slide1.jpg" alt=""title="#caption1">>
+				 
+				        <img src="images/slide2.jpg" alt=""title="#caption2">>
+				 
+				        <img src="images/slide3.jpg" alt=""title="#caption3">>
+				 
+				        <img src="images/slide4.jpg" alt=""title="#caption4">>
+				     <!--    <img src="images/slide5.jpg" alt=""title="#caption5">>
+				        <img src="images/slide6.jpg" alt=""title="#caption6">> -->
+				        	<div id="caption1" class="nivo-html-caption">
+						        <strong>LH 216</strong><span></span><em>opposite the library</em>
+						     </div>
+							    <div id="caption3" class="nivo-html-caption">
+							        <strong>LH 218</strong><span></span><em>Next to Akornor</em>
+							        </div>
+						        <div id="caption4" class="nivo-html-caption">
+						        	<strong>LH 116</strong><span></span><em>Opposite the courtyard</em>
+						        </div>
+				 
+				    	</div>
+				 
+				</div>
+				<script>
+					    $(window).load(function() {
+					        $('#slider').nivoSlider({
+					            directionNavHide: false,
+					            captionOpacity: 1,
+					            prevText: '<',
+					            nextText: '>'
+					        });
+					    });
+				// </script>
+
+			</div>
+			<div id="footer">
+				<a href="https://www.ashesi.edu.gh" target="blank"><img src="images/logo.JPG" width="70" height="70"></a> 
+					<a href="https://www.facebook.com/Ashesi" target="blank"><img src="images/facebook.JPG" width="90" height="70"></a> 
+			</div>
+
+		</div>
+                    <div class="overlay" style="display: none;">
+	<div class="login-wrapper">
+		<div class="login-content">
+			<a class="close">x</a>
+			<h3>LOGIN</h3>
+			<form method="post" action="login.php">
+				<label for="username">
+					Username:
+					<input type="text" name="username" id="username" placeholder="Username must be entered" pattern="[a-z]{1,50}.[a-z]{1,50}" required="required" />
+				</label>
+				<label for="password">
+					Password:
+					<input type="password" 	name="password" id="password" placeholder="Password must contain 1 uppercase, lowercase and number" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+				</label>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</div>
+</div>
+	</body>
+</html>
