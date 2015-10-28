@@ -1,13 +1,33 @@
+
  function sendRequest(u){
 	// Send request to server
 	//u a url as a string
-	//async is type of request
+	//async is type of request : waits until the server response comes back
 	var obj=$.ajax({url:u,async:false});
 	//Convert the JSON string to object
 	return $.parseJSON(obj.responseText);//return object
 
 				
 }
+
+/*
+ function sendRequest(u){
+	// Send request to server
+	//u a url as a string
+	//async is type of request : waits until the server response comes back
+	var obj=$.ajax({
+	url:u,
+	async:false,	
+	error:function(){
+	var result='{"result":0}';
+	return result;
+	}
+	});
+	
+	//Convert the JSON string to object
+	return $.parseJSON(obj.responseText);//return object			
+}
+*/
 /*this function is called when a food product is clicked.	
 It sends a request to the server asking for the product details using the pid(product id) and the 
 result is used to make the transaction.
@@ -127,9 +147,10 @@ function transact(){
 	var tranId = Math.floor(Math.random() * (10000000)) + 10000000;
 	var phone = $("#phone").val();
 	var checkdiscount="requests/transactionresponse.php?cmd=7&phone="+phone;
-	
-	if(checkdiscount.result==1){
-	alert("give discount");
+	var askDiscount=sendRequest(checkdiscount);
+	if(askDiscount.result==1){
+	alert("10% Discount Given");
+	totalPrice=totalPrice*0.9;
 	}
 	var url="requests/transactionresponse.php?cmd=1&tranid="+tranId+"&fnames="+names+"&fqty="+quantities+
 	"&fprice="+prices+"&total="+totalPrice+"&empid="+empId+"&phone="+phone;
@@ -137,10 +158,9 @@ function transact(){
 	var transacted=sendRequest(url);
 	alert("Transaction Completed");
 	if(totalPrice>500){
-	alert("derserves discount");
 	var sendsms="requests/sms.php?cmd=1&phone="+phone+"&totalprice="+totalPrice;
-	alert(sendsms);
-	var sentsms=sendRequest(sendsms);
+	//alert(sendsms);
+	//var sentsms=sendRequest(sendsms);
 	}
 	
     document.getElementById("totalprice").value=null;
@@ -178,7 +198,6 @@ function addProduct(){
         var response = sendRequest(url);
 		
         if (response.result == 1) {
-            alert("image upload done");
 
             // attach handler to form's submit event
             $('#addform').submit(function () {
@@ -240,7 +259,14 @@ function why(){
  */
 function showProducts(){
 	
-    var products=sendRequest("requests/productresponse.php?cmd=3");
+    var products;
+	
+	if(doesConnectionExist()==false){
+	products=$.parseJSON(localStorage.getItem("products"));
+	}
+	else{
+	products=sendRequest("requests/productresponse.php?cmd=3");
+	}
 	
     if(products.result==1){
 	//alert(products.foods.length);
@@ -362,9 +388,15 @@ function showProducts(){
 
 			//var request="http://cs.ashesi.edu.gh/~csashesi/class2016/david-wainaina/waterReaderpgap/addData.php?cmd=2";
 			var request='requests/transactionresponse.php?cmd=6';
-				alert("called");
-			var ajaxResults=sendRequest(request);
-			alert("called");
+			
+			var ajaxResults;
+			if(doesConnectionExist()==false){
+				ajaxResults=$.parseJSON(localStorage.getItem("transactions"));
+			}
+			else
+			{
+			ajaxResults=sendRequest(request);
+			}
 			var tableName=document.getElementById("transactionstable");
 			
 

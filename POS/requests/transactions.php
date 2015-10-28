@@ -51,7 +51,7 @@ class transactions extends base{
 	}
 
 	function checkForDiscount($phone){
-		$sql="select * from transactions where customer_phone='$phone' order by transaction_time DESC limit 1";
+		$sql="select * from transactions where customer_phone='$phone'and total_price>500 order by transaction_time DESC limit 1";
 		return $this->query($sql);
 	}
 }

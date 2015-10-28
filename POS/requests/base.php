@@ -1,23 +1,23 @@
 <?php
 
 /**
- * author: 
- * date:
+ * author: David Wainaina
+ * date: 28/10/2015 Anne Njeri Birthday
  * description: A root class for all manage classes. This class communicates with DB
  */
 
-// define("DB_HOST", 'localhost');
-// define("DB_NAME", 'csashesi_david-wainaina');
-// define("DB_PORT", 3306);
-// define("DB_USER","csashesi_dw16");
-// define("DB_PWORD","db!o^_r46");
-
+ define("DB_HOST", 'localhost');
+ define("DB_NAME", 'csashesi_david-wainaina');
+ define("DB_PORT", 3306);
+ define("DB_USER","csashesi_dw16");
+ define("DB_PWORD","db!o^_r46");
+/*
 define("DB_HOST", 'localhost');
 define("DB_NAME", 'pos');
 define("DB_PORT", 3306);
 define("DB_USER","root");
 define("DB_PWORD","");
-
+*/
 define("LOG_LEVEL_SEC",0);
 define("LOG_LEVEL_DB_FAIL",0);
 
